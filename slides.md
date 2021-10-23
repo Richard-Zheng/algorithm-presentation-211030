@@ -1,6 +1,5 @@
 ---
-# try also 'default' to start simple
-theme: seriph
+theme: default
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
 background: https://source.unsplash.com/collection/94734566/1920x1080
@@ -21,328 +20,181 @@ drawings:
   persist: false
 ---
 
-# Welcome to Slidev
+# 问题分析与线性优化策略
 
-Presentation slides for developers
-
-<div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    Press Space for next page <carbon:arrow-right class="inline"/>
-  </span>
-</div>
-
-<div class="abs-br m-6 flex gap-2">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon:edit />
-  </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub"
-    class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon-logo-github />
-  </a>
-</div>
-
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
+GDUT-//undefined
 
 ---
 
-# What is Slidev?
+# 目标
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
+- 写信息学竞赛题的一般流程
+- 如何高效训练？
+- 优化——面对题目时最重要的思维方向
+- 简单的数学推导技巧
 
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - theme can be shared and used with npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embedding Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export into PDF, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - anything possible on a webpage
+## 关于例题
 
-<br>
-<br>
-
-Read more about [Why Slidev?](https://sli.dev/guide/why)
-
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
--->
-
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent; 
-  -moz-text-fill-color: transparent;
-}
-</style>
-
----
-
-# Navigation
-
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
-
-### Keyboard Shortcuts
-
-|     |     |
-| --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
-
-<!-- https://sli.dev/guide/animations.html#click-animations -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
-
----
-layout: image-right
-image: https://source.unsplash.com/collection/94734566/1920x1080
----
-
-# Code
-
-Use code snippets and get the highlighting directly![^1]
-
-```ts {all|2|1-6|9|all}
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-}
-
-function updateUser(id: number, update: User) {
-  const user = getUser(id)
-  const newUser = {...user, ...update}  
-  saveUser(id, newUser)
-}
-```
-
-<arrow v-click="3" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
-
-[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
-
-<style>
-.footnotes-sep {
-  @apply mt-20 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
-
----
-
-# Components
-
-<div grid="~ cols-2 gap-4">
-<div>
-
-You can use Vue components directly inside your slides.
-
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
-
-```html
-<Counter :count="10" />
-```
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
-
----
-class: px-20
----
-
-# Themes
-
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
-
-<div grid="~ cols-2 gap-2" m="-t-2">
-
-```yaml
----
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/themes/use.html) and
-check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
-
----
-preload: false
----
-
-# Animations
-
-Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
-
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }">
-  Slidev
-</div>
-```
-
-<div class="w-60 relative mt-6">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-square.png"
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-circle.png"
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-triangle.png"
-    />
-  </div>
-
-  <div 
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
-
-<div
-  v-motion
-  :initial="{ x:35, y: 40, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn More](https://sli.dev/guide/animations.html#motion)
-
-</div>
-
----
-
-# LaTeX
-
-LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
-
-<br>
-
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-$$
-\begin{array}{c}
-
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
-= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
-
-\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
-
-\nabla \cdot \vec{\mathbf{B}} & = 0
-
-\end{array}
-$$
-
-<br>
-
-[Learn more](https://sli.dev/guide/syntax#latex)
-
----
-
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-2 gap-10 pt-4 -mb-6">
-
-```mermaid {scale: 0.9}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-</div>
-
-[Learn More](https://sli.dev/guide/syntax.html#diagrams)
-
+课后建议完成课上例题。我认为有训练价值的题，都会写题号，题目号格式与洛谷相同。
 
 ---
 layout: center
-class: text-center
 ---
 
-# Learn More
+# Part 1: 问题分析
 
-[Documentations](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
+---
+
+# 竞赛题目的构成
+
+- 题目描述
+- 数据范围
+
+---
+
+## 题目描述
+
+![image.png](https://i.loli.net/2021/10/22/tg13PR8YhbdvJFr.png)
+
+- 背景：一般可以忽略
+- 题目内容：问题是什么
+
+**题目描述一定要和数据范围一起看**
+
+---
+
+# 例题
+
+## 斐波那契数列
+
+将斐波那契数列的第$n$项记为$a_n$. 输出$a_n\bmod 10^7$
+
+<v-click>
+
+数据范围：？
+
+</v-click>
+
+---
+
+# 取模运算（$\bmod$）
+
+我们可以把取模运算想象成将数轴弯曲绕成一个圆圈。
+
+<div class="absolute right-30px top-30px">
+<img src="https://nrich.maths.org/content/id/4350/Clock2.gif" />
+</div>
+
+参考右图中的时钟，$13\bmod 12=1$. 取模运算就是求相除后得到的余数。
+
+## 运算法则
+
+与四则运算类似，但是除法例外。其规则如下：
+
+- $(a+b)\bmod p=(a\bmod p+b\bmod p)\bmod p$
+- $(a-b)\bmod p=(a\bmod p-b\bmod p)\bmod p$
+- $(a\times b)\bmod p=(a\bmod p \times b\bmod p)\bmod p$
+- $a^{b}\bmod p=((a\bmod p)^b)\bmod p$
+
+---
+
+## P1720
+ 
+将斐波那契数列的第$n$项记为$a_n$. 输出$a_n\bmod 10^7$
+
+数据范围$1\leq t\leq 10, 1\leq n\leq 1000$
+
+<v-click>
+
+解法：模拟，总复杂度$Tn\approx 10^4$
+
+```cpp
+#include <iostream>
+using namespace std;
+const int MAXN = 1001;
+const int MOD = 1e7;
+int main() {
+    int f[MAXN] = {0};
+    f[1] = 1;
+    f[2] = 1;
+    for (int i = 3; i <= MAXN; i++) {
+        f[i] = (f[i - 1] + f[i - 2]) % MOD;
+    }
+    int t, n; cin>>t;
+    while(t--){
+        cin>>n;
+        cout<<f[n]<<endl;
+    }
+}
+```
+
+</v-click>
+
+---
+
+## P1962
+
+数据范围$T=1, 1\leq n\leq 10^{18}$
+
+<v-click>
+
+解法：直接模拟会超时，需要使用**矩阵快速幂**将单次求值复杂度优化至$\log_2n$，总复杂度$Tn\approx 60$，轻松AC！
+
+![dot-product](https://www.shuxuele.com/algebra/images/matrix-multiply-a.svg)
+
+“点积”是把**对称的元素相乘**，然后把结果加起来：
+
+(1, 2, 3) • (7, 9, 11) = 1×7 + 2×9 + 3×11 = 58
+
+$$
+\begin{bmatrix} fib\left( i\right) \\ fib\left( i-1\right) \end{bmatrix}=\begin{bmatrix} fib\left( i-1\right) \\ fib\left( i-2\right) \end{bmatrix}\begin{bmatrix} 1 & 1 \\ 1 & 0 \end{bmatrix}
+$$
+$$
+\begin{bmatrix} f\left( n\right) \\ f\left( n-1\right) \end{bmatrix}=\begin{bmatrix} f\left( 2\right) \\ f\left( 1\right) \end{bmatrix}\begin{bmatrix} 1 & 1 \\ 1 & 0 \end{bmatrix}^{n-2}
+$$
+
+</v-click>
+
+---
+
+## P5110
+
+数据范围$1\leq T\leq 5\times 10^7, 1\leq n\leq 10^9$
+
+<v-click>
+
+解法：$Tlog_2n \approx 1.5\times 10^9 > 10^8$，可以看出，前一个优化也过不了，需要通过更进一步的技巧，我们称之为**光速幂**。
+
+至此已然达到**紫题/金牌题**难度，故在这里就不展开讲了。
+
+</v-click>
+
+---
+
+# 时间复杂度与算法对照表
+
+由时间复杂度推测可能的算法。在不同数据范围下，代码的时间复杂度和算法该如何选择？
+
+<div class="absolute right-30px top-15px">
+参考：<a href="https://www.acwing.com/blog/content/32/">由数据范围反推算法复杂度以及算法内容, yxc, AcWing</a>
+</div>
+
+- $n \le 30$, 指数级别, dfs+剪枝，状态压缩dp
+- $n \le 100$ => $O(n^3)$，floyd，dp，高斯消元
+- $n \le 1000$ => $O(n^2)$，$O(n^2logn)$，dp，二分，朴素版Dijkstra、朴素版Prim、Bellman-Ford
+- $n \le 10000$ => $O(n * \sqrt n)$，块状链表、分块、莫队
+- $n \le 100000$ => $O(nlogn)$ => 各种sort，线段树、树状数组、set/map、heap、拓扑排序、dijkstra+heap、prim+heap、spfa、求凸包、求半平面交、二分、CDQ分治、整体二分
+- $n \le 1000000$ => $O(n)$, 以及常数较小的 $O(nlogn)$ 算法 => 单调队列、 hash、双指针扫描、并查集，kmp、AC自动机，常数比较小的 $O(nlogn)$ 的做法：sort、树状数组、heap、dijkstra、spfa
+- $n \le 10000000$ => $O(n)$，双指针扫描、kmp、AC自动机、线性筛素数
+- $n \le 10^9$ => $O(\sqrt n)$，判断质数
+- $n \le 10^{18}$ => $O(logn)$，最大公约数，快速幂
+- $n \le 10^{1000}$ => $O((logn)^2)$，高精度加减乘除
+- $n \le 10^{100000}$ => $O(logk \times loglogk)$（k表示位数），高精度加减、FFT/NTT
+
+小技巧
+
+$\log_2 10^n =3n$
+64MB至多开1600万个int
+
+
+C++一般$1$s能计算$10^7$~$10^8$次，在这种情况下，C++代码中的操作次数控制在 $10^7$为最佳
