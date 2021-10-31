@@ -23,7 +23,9 @@ drawings:
 
 # 问题分析与线性优化策略
 
-GDUT-//undefined & GDUT20ZYL
+2021级第二次公开课 2021.10.31
+
+GDUT-//undefined & <font color=#ff8c00> GDUT20ZYL </font>
 
 ---
 
