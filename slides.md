@@ -19,6 +19,7 @@ info: |
 drawings:
   persist: false
   syncAll: false
+download: https://cdn.jsdelivr.net/gh/Richard-Zheng/algorithm-presentation-211030/slides-export.pdf
 ---
 
 # 问题分析与线性优化策略
